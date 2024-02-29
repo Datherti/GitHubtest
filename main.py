@@ -1,9 +1,9 @@
-from flask import Flask
+n = int(input("Введіть кількість елементів у послідовності: "))
+sequence = [int(x) for x in input("Введіть натуральні числа через пробіл: ").split()]
 
-app = Flask('app')
+evenNumbers = [x for x in sequence if x % 2 == 0]
 
-@app.route('/')
-def hello_world():
-  return 'Hello, World!'
-
-app.run(host='0.0.0.0', port=8080)
+if len(evenNumbers) == 0:
+    print("У послідовності немає парних чисел.")
+else:
+    print("Масив парних чисел:", evenNumbers)
