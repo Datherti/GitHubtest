@@ -1,26 +1,9 @@
-import math
+n = int(input("Введіть кількість елементів у послідовності: "))
+sequence = [int(x) for x in input("Введіть натуральні числа через пробіл: ").split()]
 
-def func(x, l):
-    if math.cos(x) == 0 or h == 0:
-        print("Помилка: ctg(x) невизначений або крок h дорівнює 0.")
-        return None
+evenNumbers = [x for x in sequence if x % 2 == 0]
 
-    result = 1 / math.tan(x) + l
-    return result
-
-a = float(input("Введіть початкове значення a: "))
-b = float(input("Введіть кінцеве значення b: "))
-h = float(input("Введіть крок h: "))
-l = float(input("Введіть значення константи l: "))
-
-if a == 0 or b == 0 or h == 0:
-    print("Значення a, b або h не можуть дорівнювати 0.")
+if len(evenNumbers) == 0:
+    print("У послідовності немає парних чисел.")
 else:
-    print("\nЗначення аргументу\tЗначення функції F(x)")
-
-    x = a
-    while x <= b:
-        result = func(x, l)
-        if result is not None:
-            print(f"{round(x, 2)}\t\t\t\t{round(result, 4)}")
-        x += h
+    print("Масив парних чисел:", evenNumbers)
